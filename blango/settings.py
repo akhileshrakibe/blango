@@ -19,6 +19,7 @@ class Dev(Configuration):
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent
 
+    AUTH_USER_MODEL = "blango_auth.User"
 
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -42,8 +43,11 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'crispy_forms',
         'crispy_bootstrap5',
+        'debug_toolbar',
+        'blango_auth',
         'blog',
-        "debug_toolbar",
+        
+        
     ]
 
     MIDDLEWARE = [
@@ -179,6 +183,7 @@ class Dev(Configuration):
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     ]
 
+    
     INTERNAL_IPS = ["192.168.11.179"]
 
     X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
