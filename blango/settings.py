@@ -183,6 +183,8 @@ class Dev(Configuration):
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     ]
 
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
     
     INTERNAL_IPS = ["192.168.11.179"]
 
